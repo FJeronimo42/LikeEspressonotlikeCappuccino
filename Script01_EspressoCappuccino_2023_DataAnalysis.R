@@ -373,7 +373,7 @@ M7 <- glm(data=data.GLM01,
           family=Gamma(link=inverse))
 summary(M7)
 
-# Univ models selection
+  # Univ models selection
 UVAR.SLCT <- model.sel(M0, M1, M2, M5, M6, M7)
 
 UVAR.SLCT
@@ -554,6 +554,13 @@ S8 <- mgcv::gam(formula=PROD~s(IIND),
           family = gaussian(link=inverse),
           method = "REML")
 summary(S8)
+
+S8 <- mgcv::gam(formula=PROD~s(IIND),
+                data=data.GLM01,
+                family = gaussian(link=inverse),
+                method = "REML")
+summary(S8)
+
 
 model.sel(S1, S2, S3, S4, S5, S6, S7, S8)
 
